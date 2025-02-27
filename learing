@@ -1,0 +1,54 @@
+# include <iostream>
+# define LOCAL system("chcp 1251>NULL")
+
+
+int first(int a) {
+	for (int i = 0; a > 9; i++) {
+		int temp = a % 10;
+		a = a / 10;
+
+	}
+	return a;
+}
+
+int end(int b) {
+	return b = b % 10;
+
+}
+
+int number_of_digits(int a) {
+	int i = 0;
+	while (a!=0)
+	{
+		a = a / 10;
+		i++;
+	}
+	return i;
+}
+int number_of_dozens(int a) {
+	a = a / 10;
+	return a;
+}
+
+int main() {
+	LOCAL;
+	std::cout << "Введите число, затем нажмите клавишу ENTER" << std::endl;
+	int num;
+	std::cin >> num;
+	//int num = 102345;
+	std::cout << std::endl;
+	
+	int first_rez= first(num);
+	int end_rez = end(num);
+	int number_of_digits_rez = number_of_digits(num);
+	int number_of_dozens_rez = number_of_dozens(num);
+
+
+	std::cout << "начальное значение " <<num << std::endl;
+	std::cout <<"первая цифра  " << first_rez << std::endl;
+	std::cout << "последняя цифра  " << end_rez << std::endl;
+	std::cout << "сумма первой и последней цифры  "  << first_rez+ end_rez << std::endl;
+	std::cout << "количество цифр " << number_of_digits_rez << std::endl;
+	std::cout << "количество десяток в числе " << number_of_dozens_rez<< std::endl;
+	return 0;
+}
